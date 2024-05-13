@@ -1,13 +1,14 @@
 package HomeW;
 
-public class ArIntoRome {
-    int res;
-    String resctring = " ";
+import java.util.Arrays;
+import java.util.Objects;
 
-    String trans() {
+public class ArIntoRome {
+    String resctring = "";
+
+    String arToRim(int res) {
         if (res < 0) {
-            resctring = "error";
-            return resctring;
+            throw new IllegalArgumentException("error");
         }
         int unit = res % 10;
         int tens = res % 100 / 10;
@@ -92,6 +93,68 @@ public class ArIntoRome {
             resctring = "C";
         }
         return resctring;
+    }
+
+    String[] myArray;
+
+
+    int romenum(String str) {
+        int num = 0;
+        switch (str) {
+            case "I": {
+                num = 1;
+                break;
+            }
+            case "II": {
+                num = 2;
+                break;
+            }
+            case "III": {
+                num = 3;
+                break;
+            }
+            case "IV": {
+                num = 4;
+                break;
+            }
+            case "V": {
+                num = 5;
+                break;
+            }
+            case "VI": {
+                num = 6;
+                break;
+            }
+            case "VII": {
+                num = 7;
+                break;
+            }
+            case "VIII": {
+                num = 8;
+                break;
+            }
+            case "IX": {
+                num = 9;
+                break;
+            }
+            case "X": {
+                num = 10;
+                break;
+            }
+            default:{
+                num = -1;
+            }
+        }
+        return num;
+    }
+
+    int[] romeToAr() {
+        int[] arr = new int[2];
+        int num1 = romenum(myArray[0]);
+        int num2 = romenum(myArray[2]);
+        arr[0] = num1;
+        arr[1] = num2;
+        return arr;
     }
 
 }
